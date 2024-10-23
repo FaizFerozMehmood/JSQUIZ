@@ -277,22 +277,32 @@ const jsQuestions = [
 ];
 console.log(jsQuestions);
 
-const boxes = document.getElementsByClassName('box')
-for(let i =0; i < boxes.length;i++){
-  boxes[i].addEventListener('click',function(){
-    clearAll()
+const boxes = document.querySelectorAll('.box')
+// for(let i =0; i < boxes.length;i++){
+//   boxes[i].addEventListener('click',function(){
+//     clearAll()
+//     this.style.backgroundColor = "white";
+//     this.style.color = "black";
+//     this.innerText = jsQuestions[Math.floor(Math.random()*jsQuestions.length)]
+
+    
+//   })
+// }
+boxes.forEach((box) => {
+  box.addEventListener('click', function () {
+    console.log(this);
+    clearAll() 
     this.style.backgroundColor = "white";
     this.style.color = "black";
     this.innerText = jsQuestions[Math.floor(Math.random()*jsQuestions.length)]
-
-    
-  })
-}
+  });
+});
 function clearAll(){
-  for(let i =0; i < boxes.length;i++){
-    boxes[i].style.backgroundColor="black"
-    boxes[i].style.color = "white"
-    boxes[i].innerText = i + 1
+  // for(let i =0; i < boxes.length;i++){
+  //   boxes[i].style.backgroundColor="black"
+  //   boxes[i].style.color = "white"
+  //   boxes[i].innerText = i + 1
     
-  }
+  // }
+  
 }
