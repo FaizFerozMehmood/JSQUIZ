@@ -288,6 +288,19 @@ const boxes = document.querySelectorAll('.box')
     
 //   })
 // }
+// function clearAll(){
+  // for(let i =0; i < boxes.length;i++){
+  //   boxes[i].style.backgroundColor="black"
+  //   boxes[i].style.color = "white"
+  //   boxes[i].innerText = i + 1
+    
+  // }
+  // }
+
+
+  //++++++++++++++++++++++++++++++//
+
+  
 boxes.forEach((box) => {
   box.addEventListener('click', function () {
     console.log(this);
@@ -297,12 +310,15 @@ boxes.forEach((box) => {
     this.innerText = jsQuestions[Math.floor(Math.random()*jsQuestions.length)]
   });
 });
-function clearAll(){
-  // for(let i =0; i < boxes.length;i++){
-  //   boxes[i].style.backgroundColor="black"
-  //   boxes[i].style.color = "white"
-  //   boxes[i].innerText = i + 1
-    
-  // }
+  function clearAll(){
+
+    boxes.forEach((box,ind)=>{
+      box.addEventListener('click',function(){
+           this.style.backgroundColor="black"
+      this.style.color = "white"
+      this.innerText = ind +1
   
-}
+      
+      })
+    })
+  }
