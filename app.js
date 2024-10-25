@@ -309,7 +309,6 @@ boxes.forEach((box) => {
     box.style.backgroundColor = "white";
     box.style.color = "black";
     box.innerText = jsQuestions[Math.floor(Math.random() * jsQuestions.length)];
-    console.log(this);
   });
 });
 
