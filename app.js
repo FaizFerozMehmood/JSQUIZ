@@ -301,24 +301,22 @@ const boxes = document.querySelectorAll('.box')
   //++++++++++++++++++++++++++++++//
 
   
+
 boxes.forEach((box) => {
+  var boxes = document.querySelectorAll('.box');
   box.addEventListener('click', function () {
+    clearAll(); 
+    box.style.backgroundColor = "white";
+    box.style.color = "black";
+    box.innerText = jsQuestions[Math.floor(Math.random() * jsQuestions.length)];
     console.log(this);
-    clearAll() 
-    this.style.backgroundColor = "white";
-    this.style.color = "black";
-    this.innerText = jsQuestions[Math.floor(Math.random()*jsQuestions.length)]
   });
 });
-  function clearAll(){
 
-    boxes.forEach((box,ind)=>{
-      box.addEventListener('click',function(){
-           this.style.backgroundColor="black"
-      this.style.color = "white"
-      this.innerText = ind +1
-  
-      
-      })
-    })
-  }
+function clearAll() {
+  boxes.forEach((box, index) => {
+    box.style.backgroundColor = "black";
+    box.style.color = "white";
+    box.innerText = index + 1;
+  });
+}
